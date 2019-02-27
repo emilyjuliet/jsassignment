@@ -1,0 +1,44 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<script>
+		let myPenguin={
+			character:'penguins',
+			origin:'penguin island',
+			author:'Anatole France',
+			canFly:'false',
+			chirp:'chirp',
+
+			details:function(){
+				return `Hello, I'm a penguin and my name is [NAME HERE.]`;
+			}
+		}
+		console.log(myPenguin.details());
+
+		myPenguin.chirp=function(){
+				return `CHIRP CHIRP! Is this what penguins sound like`;
+			}
+		console.log(myPenguin.chirp());
+
+		myPenguin.sayHello=function(){;
+				return `Hello i am a penguin and my name is  ${this.character} `;
+           }
+           
+				
+			console.log(myPenguin.sayHello());
+
+			myPenguin.character=`Penguin McPenguinFace`,
+				myPenguin.sayHello=function(){;
+				return `Hello i am a penguin and my name is  ${this.character} `;
+			}
+			console.log(myPenguin.sayHello());
+
+	</script>
+	
+</body>
+</html>
