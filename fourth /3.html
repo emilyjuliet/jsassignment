@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background color</title>
+</head>
+<body>
+	<div id="content">
+    	<p id="pet">I have a dog</p>
+	</div>
+		<br/><br/><br/>
+        <button id="jsstyle"
+        onclick="updateMyPage()">Background Color</button>
+ 
+		<script type="text/javascript">
+	
+		function updateMyPage() {
+        let item = document.getElementById('pet');
+        item.style.color = 'yellow';
+        item.style.fontSize = '40px';
+        item.style.Background = 'black';
+    }
+
+</script>
+</body>
+</html>
