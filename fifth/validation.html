@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form >
+    <label>First name
+        <input id="firstname" type="text" onkeyup="validatefirstname()">
+    </label>
+    <br><br>
+    <label>Last name
+        <input id="lastname" type="text" onkeyup="validatelastname()">
+    </label>
+    <br><br>
+    <label>Email
+        <input id="email" type="text" onkeyup="emailIsValid()">
+    </label>
+    <br><br>
+    <label>Phone
+        <input id="phone" type="number" onkeyup="validatephone()">
+    </label>
+    <br><br>
+    <label>Password
+        <input id="password" type="text" onkeyup="passwordValid()">
+    </label>
+    <br><br>
+    <label>Confirm password
+        <input id="confirmpassword" type="text" onkeyup="confirmpasswordValid()">
+    </label>
+    <br><br>
+    <p id="message"></p>
+    <button onclick="submit()" type="button" >Submit</button>
+</form>
+    <script>
+        function validatefirstname(firstname){
+    let firstnameRegex = /(.*[a-z]){3}/i;
+    return firstnameRegex.test(firstname)
+    }
+    if (!validatefirstname(firstname)) {
+    errors.firstname = 'Enter a valid name';
+    } else {
+    errors.firstname = ''
+    }
+    function validatelastname(lastname){
+    let lastnameRegex = /(.*[a-z]){3}/i;
+    return lastnameRegex.test(lastname)
+    }
+    if (!validatelastname(lastname)) {
+    errors.lastname = 'Enter a valid name';
+    } else {
+    errors.lastname = ''
+    }
+       function emailIsValid(email) {
+    const emailRegex = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i;
+    return emailRegex.test(String(email).toLowerCase());
+    }
+    if (!emailIsValid(user.email)) {
+    errors.email = 'Enter a valid Email';
+    } else {
+    errors.email = ''
+    }
+    function validatephone(phone){
+    let phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone)
+    }
+    if (!validatephone(phone)) {
+    errors.phone = 'Enter a valid phone';
+    } else {
+    errors.phone = ''
+    }
+        function passwordValid(password){
+    let passwordRegex = /^(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+    return passwordRegex.test(password)
+    }
+    if (!passwordValid(user.password)) {
+    errors.password = 'Enter a valid password';
+    } else {
+    errors.password = ''
+    }
+    function confirmpasswordValid(confirmpassword){
+    let confirmpasswordRegex = /^(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/;
+    return confirmpasswordRegex.test(confirmpassword)
+    }
+    if (!confirmpasswordValid(user.confirmpassword)) {
+    errors.confirmpassword = 'Enter a valid password';
+    } else {
+    errors.confirmpassword = ''
+    }
+        </script>
+</body>
+</html>
